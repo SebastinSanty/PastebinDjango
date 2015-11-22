@@ -1,6 +1,15 @@
-<h1>Sebastin's Pastebin {{title}}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django PasteBin</title>
+</head>
+<body style = "align:center;text-align:center">
+	<h1>Django Pastebin</h1>
 <form method="POST" action="">{% csrf_token %}
 {{form.as_p}}
 <input type = 'submit' value = 'Paste' class = 'btn' name = 'pastebtn'>
 
 </form>
+
+</body>
+</html>
