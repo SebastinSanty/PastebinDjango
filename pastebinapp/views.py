@@ -12,11 +12,12 @@ def home(request):
 
 	}
 	if form.is_valid():
-		textboxname = form.cleaned_data['name']
+		
 		instance = form.save(commit=False)
 		instance.save()
+		textboxname = instance.pasteurl
 
-		paste = Paste.objects.get(name=textboxname)
+		paste = Paste.objects.get(pasteurl=textboxname)
 		return HttpResponseRedirect("/%s" %(paste.pasteurl))
 		
 	return render(request,inipage,context)
